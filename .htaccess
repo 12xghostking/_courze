@@ -1,0 +1,5 @@
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+</IfModule>
+
+AddType 'text/html; charset=UTF-8' <style class="css"></style>

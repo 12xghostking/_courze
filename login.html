@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<title>Login</title>
+        <!-- the form awesome library is used to add icons to our form -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <!-- include the stylesheet file -->
+        <link href="/style.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<header>
+			<h1>Courze</h1>
+		  </header>
+		  
+		  
+		<div class="login">
+			<h1>Login</h1>
+			<form action="/auth" method="post">
+				<label for="username">
+					<!-- font awesome icon -->
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<input type="submit" value="Login">
+			</form>
+			<p class="msg">Don't have an account? <a href="#" id="register-link">Register</a></p>
+		</div>
+		<div class="register" style="display:none;">
+			<h1>Register</h1>
+			<form action="/register" method="post">
+				<label for="reg-email">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="email" name="email" placeholder="Email" id="reg-email" required>
+				<label for="reg-username">
+					<!-- font awesome icon -->
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="reg-username" required>
+				<label for="reg-password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="reg-password" required>
+				
+				<input type="submit" value="Register">
+			</form>
+			<p class="msg">Already have an account? <a href="#" id="login-link">Login</a></p>
+		</div>
+		<script>
+			const loginForm = document.querySelector('.login');
+			const registerForm = document.querySelector('.register');
+			const registerLink = document.querySelector('#register-link');
+			const loginLink = document.querySelector('#login-link');
+
+			registerLink.addEventListener('click', () => {
+				loginForm.style.display = 'none';
+				registerForm.style.display = 'block';
+			});
+
+			loginLink.addEventListener('click', () => {
+				loginForm.style.display = 'block';
+				registerForm.style.display = 'none';
+			});
+		</script>
+	</body>
+</html>
